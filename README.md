@@ -1,2 +1,21 @@
 # Cricket-Tournament-Management-System
-Full Stack Cricket Tournament Management System built using React, Django REST Framework and PostgreSQL.
+Project: Cricket Tournament Management System
+
+Tech Stack:
+- React.js
+- Django
+- Django REST Framework
+- PostgreSQL
+- Cloudinary
+- Tailwind CSS
+
+Features:
+- Team Management
+- Player Profiles
+- Match Fixtures
+- Points Table
+- Sponsors
+- Organizers
+- Gallery
+- Mobile Responsive Design
+- Admin Dashboard
