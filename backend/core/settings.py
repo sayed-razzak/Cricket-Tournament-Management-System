@@ -6,7 +6,7 @@ import cloudinary.api
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-change-this-key'
+SECRET_KEY = os.getenv("SECRET_KEY") 
 
 DEBUG = True
 
