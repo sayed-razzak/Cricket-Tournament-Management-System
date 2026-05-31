@@ -19,11 +19,12 @@ function Navbar() {
         <nav className="hidden md:flex items-center gap-6 font-medium text-sm">
           <Link to="/">Home</Link>
           <Link to="/teams">Teams</Link>
+          <Link to="/organizers">Organizers</Link>
           <Link to="/fixtures">Fixtures</Link>
           <Link to="/points-table">Points Table</Link>
-          <Link to="/rules">Rules</Link>
-          <Link to="/organizers">Organizers</Link>
           <Link to="/sponsors">Sponsors</Link>
+          <Link to="/gallery">Gallery</Link> 
+          <Link to="/rules">Rules</Link>
         </nav>
 
         <button
