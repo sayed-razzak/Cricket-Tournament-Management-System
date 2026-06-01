@@ -4,6 +4,26 @@ import { getImageUrl } from "../utils/images";
 import PageHeader from "../components/PageHeader";
 import EmptyState from "../components/EmptyState";
 
+function getFallbackMatchDate(dateTime = "") {
+  const [datePart] = dateTime.split("T");
+  if (!datePart) return "";
+
+  const [year, month, day] = datePart.split("-");
+  return `${day}/${month}/${year}`;
+}
+
+function getFallbackMatchTime(dateTime = "") {
+  const [, timePart = ""] = dateTime.split("T");
+  const [hourText, minute = "00"] = timePart.split(":");
+  const hour = Number(hourText);
+
+  if (Number.isNaN(hour)) return "";
+
+  const period = hour >= 12 ? "PM" : "AM";
+  const displayHour = hour % 12 || 12;
+  return `${displayHour}:${minute} ${period}`;
+}
+
 function Fixtures() {
   const [matches, setMatches] = useState([]);
 
@@ -50,7 +70,10 @@ function Fixtures() {
                   <div className="text-center px-1">
                     <div className="text-red-700 font-black text-xl">VS</div>
                     <div className="mt-2 text-[11px] sm:text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded-lg whitespace-nowrap">
-                      {new Date(match.date).toLocaleDateString("en-GB")}
+                      {match.match_date || getFallbackMatchDate(match.date)}
+                    </div>
+                    <div className="mt-2 text-[11px] sm:text-xs font-black text-red-700 bg-red-50 px-2 py-1 rounded-lg whitespace-nowrap">
+                      {match.match_time || getFallbackMatchTime(match.date)}
                     </div>
                     <div className="mt-2 text-[11px] sm:text-xs text-gray-500 max-w-24 sm:max-w-none">
                       {match.venue}

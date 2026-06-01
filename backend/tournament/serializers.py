@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from django.utils import timezone
 from .models import Team, Player, Match, PointsTable, Rule, Organizer, Sponsor, Gallery
 
 
@@ -21,6 +22,19 @@ class MatchSerializer(serializers.ModelSerializer):
     team2_name = serializers.CharField(source='team2.name', read_only=True)
     team1_logo = serializers.ImageField(source='team1.logo', read_only=True)
     team2_logo = serializers.ImageField(source='team2.logo', read_only=True)
+    match_date = serializers.SerializerMethodField()
+    match_time = serializers.SerializerMethodField()
+
+    def get_local_datetime(self, obj):
+        if timezone.is_aware(obj.date):
+            return timezone.localtime(obj.date)
+        return obj.date
+
+    def get_match_date(self, obj):
+        return self.get_local_datetime(obj).strftime('%d %b %Y')
+
+    def get_match_time(self, obj):
+        return self.get_local_datetime(obj).strftime('%I:%M %p').lstrip('0')
 
     class Meta:
         model = Match
