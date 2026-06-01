@@ -2,12 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import API from "../services/api";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
-
-function getImageUrl(path) {
-  if (!path) return "";
-  if (path.startsWith("http://") || path.startsWith("https://")) return path;
-  return `http://127.0.0.1:8000${path}`;
-}
+import { getImageUrl } from "../utils/images";
 
 function Home() {
   const [teams, setTeams] = useState([]);

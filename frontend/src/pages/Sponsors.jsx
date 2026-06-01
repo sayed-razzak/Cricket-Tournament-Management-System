@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
 import API from "../services/api";
-
-function getImageUrl(path) {
-  if (!path) return "";
-  if (path.startsWith("http://") || path.startsWith("https://")) return path;
-  return `http://127.0.0.1:8000${path}`;
-}
+import { getImageUrl } from "../utils/images";
 
 function Sponsors() {
   const [sponsors, setSponsors] = useState([]);

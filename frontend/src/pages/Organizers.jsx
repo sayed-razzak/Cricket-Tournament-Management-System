@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
 import API from "../services/api";
-
-function getImageUrl(path) {
-  if (!path) return "";
-  if (path.startsWith("http://") || path.startsWith("https://")) return path;
-  return `https://agcc26-backend.onrender.com${path}`;
-}
+import { getImageUrl } from "../utils/images";
 
 function getOrganizerPriority(designation = "") {
   return designation.toLowerCase().includes("president") ? 0 : 1;
