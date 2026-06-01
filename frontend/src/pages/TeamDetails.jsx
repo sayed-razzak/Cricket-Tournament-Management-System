@@ -2,12 +2,6 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import API from "../services/api";
 
-function getImageUrl(path) {
-  if (!path) return "";
-  if (path.startsWith("http://") || path.startsWith("https://")) return path;
-  return `https://agcc26-backend.onrender.com${path}`;
-}
-
 function TeamDetails() {
   const { id } = useParams();
   const [team, setTeam] = useState(null);
@@ -26,27 +20,19 @@ function TeamDetails() {
     );
   }
 
-  const captainProfile = (team.players || []).find(
-    (player) => player.name?.trim().toLowerCase() === team.captain?.trim().toLowerCase()
-  );
-
-  const remainingPlayers = (team.players || []).filter(
-    (player) => player.id !== captainProfile?.id
-  );
-
-  const batters = remainingPlayers.filter(
+  const batters = (team.players || []).filter(
     (p) => p.role === "batter"
   );
 
-  const bowlers = remainingPlayers.filter(
+  const bowlers = (team.players || []).filter(
     (p) => p.role === "bowler"
   );
 
-  const allRounders = remainingPlayers.filter(
+  const allRounders = (team.players || []).filter(
     (p) => p.role === "all_rounder"
   );
 
-  const wicketKeepers = remainingPlayers.filter(
+  const wicketKeepers = (team.players || []).filter(
     (p) => p.role === "wicket_keeper"
   );
 
@@ -74,7 +60,7 @@ function TeamDetails() {
             <div className="bg-gradient-to-b from-red-700 to-red-900 flex justify-center items-center p-6">
 
               <img
-                src={getImageUrl(player.photo)}
+                src={player.photo}
                 alt={player.name}
                 className="h-[320px] w-full object-contain drop-shadow-2xl"
               />
@@ -137,7 +123,7 @@ function TeamDetails() {
             <div className="mt-10 bg-white/10 backdrop-blur-sm rounded-3xl p-6 max-w-md mx-auto">
 
               <img
-                src={getImageUrl(team.owner_photo)}
+                src={team.owner_photo}
                 alt={team.owner_name}
                 className="h-64 mx-auto object-contain drop-shadow-xl"
               />
@@ -153,36 +139,10 @@ function TeamDetails() {
             </div>
           )}
 
-          {/* CAPTAIN */}
-
-          {captainProfile && (
-            <div className="mt-8 bg-white/10 backdrop-blur-sm rounded-3xl p-6 max-w-md mx-auto">
-
-              <img
-                src={getImageUrl(captainProfile.photo)}
-                alt={captainProfile.name}
-                className="h-64 mx-auto object-contain drop-shadow-xl"
-              />
-
-              <h3 className="mt-4 text-2xl font-bold">
-                {captainProfile.name}
-              </h3>
-
-              <p className="text-yellow-400 font-medium">
-                Captain
-              </p>
-
-              <p className="text-gray-300 mt-2 uppercase">
-                {captainProfile.role.replace("_", " ")}
-              </p>
-
-            </div>
-          )}
-
           {/* TEAM LOGO */}
 
           <img
-            src={getImageUrl(team.logo)}
+            src={team.logo}
             alt={team.name}
             className="w-40 h-40 mx-auto mt-8 object-contain"
           />
