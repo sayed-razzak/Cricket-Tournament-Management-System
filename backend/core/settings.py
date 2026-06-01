@@ -3,6 +3,8 @@ import os
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+import dj_database_url 
+
 from dotenv import load_dotenv
 load_dotenv() 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -69,11 +71,13 @@ TEMPLATES = [
 WSGI_APPLICATION = 'core.wsgi.application'
 
 # Database
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    "default": dj_database_url.config(
+        default=os.getenv("postgresql://agcc26_user:8OUGysE0eVkmN3fTCe8NEPiX0vipDBc6@dpg-d8epbfbbc2fs73cpicf0-a/agcc26"),
+        conn_max_age=600
+    )
 }
 
 # Password validation
