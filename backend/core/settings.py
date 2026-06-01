@@ -75,7 +75,7 @@ import dj_database_url
 
 DATABASES = {
     "default": dj_database_url.config(
-        default=os.getenv("postgresql://agcc26_user:8OUGysE0eVkmN3fTCe8NEPiX0vipDBc6@dpg-d8epbfbbc2fs73cpicf0-a/agcc26"),
+        default=os.getenv("DATABASE_URL"),
         conn_max_age=600
     )
 }
