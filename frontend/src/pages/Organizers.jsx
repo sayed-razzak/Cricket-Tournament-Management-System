@@ -4,7 +4,22 @@ import API from "../services/api";
 function getImageUrl(path) {
   if (!path) return "";
   if (path.startsWith("http://") || path.startsWith("https://")) return path;
-  return `http://127.0.0.1:8000${path}`;
+  return `https://agcc26-backend.onrender.com${path}`;
+}
+
+function getOrganizerPriority(designation = "") {
+  const normalized = designation.toLowerCase();
+
+  if (normalized.includes("president")) return 0;
+  if (
+    normalized.includes("developer") ||
+    normalized.includes("devoloper") ||
+    normalized.includes("executive member")
+  ) {
+    return 1;
+  }
+
+  return 2;
 }
 
 function Organizers() {
@@ -25,7 +40,9 @@ function Organizers() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {organizers.map((person) => (
+        {[...organizers]
+          .sort((a, b) => getOrganizerPriority(a.designation) - getOrganizerPriority(b.designation))
+          .map((person) => (
           <div key={person.id} className="bg-white rounded-2xl shadow-lg p-6 text-center">
             <img
               src={getImageUrl(person.photo)}
