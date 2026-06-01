@@ -7,7 +7,7 @@ cloudinary==1.44.2
 django-cloudinary-storage==0.3.0
 
 gunicorn==25.0.0
-whitenoise==6.9.0s
+whitenoise==6.9.0
 psycopg2-binary==2.9.10
 
 Pillow==12.2.0
