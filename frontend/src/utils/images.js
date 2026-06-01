@@ -1,4 +1,5 @@
 const BACKEND_ORIGIN = "https://agcc26-backend.onrender.com";
+const IMAGE_CACHE_VERSION = Math.floor(Date.now() / 60000);
 
 export function getImageUrl(path) {
   if (!path) return "";
@@ -9,5 +10,5 @@ export function getImageUrl(path) {
       : `${BACKEND_ORIGIN}${path.startsWith("/") ? "" : "/"}${path}`;
 
   const separator = url.includes("?") ? "&" : "?";
-  return `${url}${separator}v=${Date.now()}`;
+  return `${url}${separator}v=${IMAGE_CACHE_VERSION}`;
 }

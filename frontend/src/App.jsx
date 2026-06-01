@@ -15,17 +15,19 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/teams" element={<Teams />} />
-        <Route path="/teams/:id" element={<TeamDetails />} />
-        <Route path="/fixtures" element={<Fixtures />} />
-        <Route path="/points-table" element={<PointsTable />} />
-        <Route path="/rules" element={<Rules />} />
-        <Route path="/organizers" element={<Organizers />} />
-        <Route path="/sponsors" element={<Sponsors />} />
-        <Route path="/gallery" element={<Gallery />} />
-      </Routes>
+      <main className="pb-20 lg:pb-0">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/teams" element={<Teams />} />
+          <Route path="/teams/:id" element={<TeamDetails />} />
+          <Route path="/fixtures" element={<Fixtures />} />
+          <Route path="/points-table" element={<PointsTable />} />
+          <Route path="/rules" element={<Rules />} />
+          <Route path="/organizers" element={<Organizers />} />
+          <Route path="/sponsors" element={<Sponsors />} />
+          <Route path="/gallery" element={<Gallery />} />
+        </Routes>
+      </main>
     </BrowserRouter>
   );
 }

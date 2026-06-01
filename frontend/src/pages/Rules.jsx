@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import API from "../services/api";
+import PageHeader from "../components/PageHeader";
+import EmptyState from "../components/EmptyState";
 
 function Rules() {
   const [rules, setRules] = useState([]);
@@ -12,34 +14,24 @@ function Rules() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-
-      {/* Header */}
-      <div className="bg-black py-10">
-        <h1 className="text-center text-4xl md:text-5xl font-black text-yellow-400">
-          Rules & Regulations
-        </h1>
-      </div>
+      <PageHeader title="Rules" subtitle="Tournament regulations and match guidelines." />
 
       {/* Rules */}
-      <div className="max-w-6xl mx-auto px-4 py-8">
+      <div className="max-w-6xl mx-auto px-4 py-6 sm:py-10">
 
         {rules.length === 0 ? (
-          <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
-            <h2 className="text-2xl font-bold">
-              No Rules Added Yet
-            </h2>
-          </div>
+          <EmptyState title="No rules added yet" />
         ) : (
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
 
             {rules.map((rule) => (
               <div
                 key={rule.id}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden"
+                className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden"
               >
 
-                <div className="bg-blue-700 text-white p-4">
-                  <h2 className="text-xl md:text-2xl font-bold">
+                <div className="bg-red-700 text-white p-4">
+                  <h2 className="text-lg md:text-2xl font-black">
                     {rule.title}
                   </h2>
                 </div>

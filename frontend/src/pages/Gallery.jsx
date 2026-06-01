@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import API from "../services/api";
 import { getImageUrl } from "../utils/images";
+import PageHeader from "../components/PageHeader";
+import EmptyState from "../components/EmptyState";
 
 function Gallery() {
   const [gallery, setGallery] = useState([]);
@@ -13,34 +15,21 @@ function Gallery() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-
-      {/* HEADER */}
-
-      <div className="bg-gradient-to-r from-black via-gray-900 to-red-900 py-12 text-center">
-        <h1 className="text-5xl md:text-6xl font-black text-yellow-400">
-          Gallery
-        </h1>
-
-        <p className="text-gray-300 mt-4 text-lg">
-          Memories of AGCC26
-        </p>
-      </div>
+      <PageHeader title="Gallery" subtitle="Moments and memories from AGCC26." />
 
       {/* GALLERY */}
 
-      <div className="max-w-7xl mx-auto px-4 py-10">
+      <div className="max-w-7xl mx-auto px-4 py-6 sm:py-10">
 
         {gallery.length === 0 ? (
-          <div className="bg-white rounded-3xl shadow-lg p-10 text-center">
-            No photos uploaded yet.
-          </div>
+          <EmptyState title="No photos uploaded yet" />
         ) : (
-          <div className="columns-2 md:columns-3 gap-4 space-y-4">
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
 
             {gallery.map((item) => (
               <div
                 key={item.id}
-                className="break-inside-avoid bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300"
+                className="break-inside-avoid bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition duration-300"
               >
                 <img
                   src={getImageUrl(item.image)}

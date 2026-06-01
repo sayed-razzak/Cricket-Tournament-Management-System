@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import API from "../services/api";
 import { getImageUrl } from "../utils/images";
+import PageHeader from "../components/PageHeader";
+import EmptyState from "../components/EmptyState";
 
 function Teams() {
   const [teams, setTeams] = useState([]);
@@ -13,29 +15,39 @@ function Teams() {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto p-5">
-      <h1 className="text-4xl font-bold mb-10">Teams</h1>
+    <div className="min-h-screen bg-gray-100">
+      <PageHeader title="Teams" subtitle="Explore every franchise, captain and squad." />
 
-      <div className="grid md:grid-cols-3 gap-8">
-        {teams.map((team) => (
-          <Link
-            to={`/teams/${team.id}`}
-            key={team.id}
-            className="bg-white rounded-xl shadow-lg p-5 text-center hover:shadow-2xl transition block"
-          >
-            <img
-              src={getImageUrl(team.logo)}
-              alt={team.name}
-              className="w-32 h-32 object-contain mx-auto rounded-full border-4 border-gray-200 bg-white"
-            />
+      <div className="max-w-7xl mx-auto px-4 py-6 sm:py-10">
+        {teams.length === 0 ? (
+          <EmptyState title="No teams found" message="Teams added in admin will appear here." />
+        ) : (
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {teams.map((team) => (
+              <Link
+                to={`/teams/${team.id}`}
+                key={team.id}
+                className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden text-center hover:shadow-xl active:scale-[0.99] transition block"
+              >
+                <div className="bg-gray-50 p-4 sm:p-6">
+                  <img
+                    src={getImageUrl(team.logo)}
+                    alt={team.name}
+                    className="w-24 h-24 sm:w-32 sm:h-32 object-contain mx-auto"
+                  />
+                </div>
 
-            <h2 className="text-2xl font-bold mt-4">{team.name}</h2>
+                <div className="p-4 sm:p-5">
+                  <h2 className="text-base sm:text-2xl font-black leading-tight">{team.name}</h2>
 
-            <p className="text-gray-600 mt-2">
-              Captain: {team.captain || "Not added"}
-            </p>
-          </Link>
-        ))}
+                  <p className="text-xs sm:text-sm text-gray-600 mt-2">
+                    Captain: {team.captain || "Not added"}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

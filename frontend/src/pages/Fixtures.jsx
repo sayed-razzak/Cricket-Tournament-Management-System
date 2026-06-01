@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import API from "../services/api";
 import { getImageUrl } from "../utils/images";
+import PageHeader from "../components/PageHeader";
+import EmptyState from "../components/EmptyState";
 
 function Fixtures() {
   const [matches, setMatches] = useState([]);
@@ -13,105 +15,69 @@ function Fixtures() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Header */}
-      <div className="bg-black py-8">
-        <h1 className="text-center text-4xl font-black text-yellow-400">
-          Fixtures & Results
-        </h1>
-      </div>
+      <PageHeader title="Fixtures" subtitle="Upcoming matches, results and scores." />
 
-      <div className="max-w-3xl mx-auto px-3 py-5 space-y-4">
-        {matches.length > 0 ? (
+      <div className="max-w-4xl mx-auto px-4 py-6 sm:py-10 space-y-4">
+        {matches.length === 0 ? (
+          <EmptyState title="No fixtures added yet" message="Add matches from Django admin." />
+        ) : (
           matches.map((match) => (
             <div
               key={match.id}
-              className="bg-white rounded-2xl shadow-md overflow-hidden"
+              className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden"
             >
-              {/* Top Bar */}
-              <div className="bg-blue-600 text-white px-4 py-2 flex justify-between items-center">
-                <span className="font-bold text-sm">
-                  Match {match.match_number || match.id}
-                </span>
-
-                <span className="text-xs bg-white/20 px-2 py-1 rounded-full capitalize">
+              <div className="bg-red-700 text-white px-4 py-3 flex justify-between items-center gap-3">
+                <span className="font-bold text-sm">Match {match.match_number || match.id}</span>
+                <span className="text-xs bg-white/20 px-3 py-1 rounded-full capitalize">
                   {match.status}
                 </span>
               </div>
 
-              {/* Teams */}
-              <div className="p-4">
-
-                <div className="flex items-center justify-between">
-
-                  {/* Team 1 */}
-                  <div className="flex flex-col items-center w-24">
+              <div className="p-4 sm:p-5">
+                <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 sm:gap-4">
+                  <div className="flex flex-col items-center min-w-0">
                     <img
                       src={getImageUrl(match.team1_logo)}
                       alt={match.team1_name}
-                      className="w-14 h-14 object-contain"
+                      className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
                     />
-                    <p className="text-xs font-bold text-center mt-2 leading-tight">
+                    <p className="text-xs sm:text-sm font-bold text-center mt-2 leading-tight break-words">
                       {match.team1_name}
                     </p>
-                    <p className="text-sm text-gray-600">
-                      {match.team1_score || "—"}
-                    </p>
+                    <p className="text-sm text-gray-600">{match.team1_score || "-"}</p>
                   </div>
 
-                  {/* VS */}
-                  <div className="text-center px-2">
-
-                    <div className="text-red-600 font-black text-xl">
-                      VS
+                  <div className="text-center px-1">
+                    <div className="text-red-700 font-black text-xl">VS</div>
+                    <div className="mt-2 text-[11px] sm:text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded-lg whitespace-nowrap">
+                      {new Date(match.date).toLocaleDateString("en-GB")}
                     </div>
-
-                    <div className="mt-2 text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded-lg">
-                      📅 {new Date(match.date).toLocaleDateString("en-GB")}
+                    <div className="mt-2 text-[11px] sm:text-xs text-gray-500 max-w-24 sm:max-w-none">
+                      {match.venue}
                     </div>
-
-                    <div className="mt-2 text-xs text-gray-500">
-                      📍 {match.venue}
-                    </div>
-
                   </div>
 
-                  {/* Team 2 */}
-                  <div className="flex flex-col items-center w-24">
+                  <div className="flex flex-col items-center min-w-0">
                     <img
                       src={getImageUrl(match.team2_logo)}
                       alt={match.team2_name}
-                      className="w-14 h-14 object-contain"
+                      className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
                     />
-                    <p className="text-xs font-bold text-center mt-2 leading-tight">
+                    <p className="text-xs sm:text-sm font-bold text-center mt-2 leading-tight break-words">
                       {match.team2_name}
                     </p>
-                    <p className="text-sm text-gray-600">
-                      {match.team2_score || "—"}
-                    </p>
+                    <p className="text-sm text-gray-600">{match.team2_score || "-"}</p>
                   </div>
-
                 </div>
 
-                {/* Result */}
                 <div className="mt-4 pt-3 border-t text-center">
-                  <p className="text-green-600 font-semibold text-sm">
+                  <p className="text-green-700 font-semibold text-sm">
                     {match.result || "Match not started yet"}
                   </p>
                 </div>
-
               </div>
             </div>
           ))
-        ) : (
-          <div className="bg-white rounded-2xl shadow-md p-8 text-center">
-            <h2 className="text-xl font-bold">
-              No fixtures added yet
-            </h2>
-
-            <p className="text-gray-600 mt-2">
-              Add matches from Django admin.
-            </p>
-          </div>
         )}
       </div>
     </div>
