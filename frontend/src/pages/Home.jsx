@@ -211,8 +211,16 @@ function Home() {
             ONE VILLAGE | ONE PASSION | ONE CHAMPION
           </div>
           <div className="mt-4 text-xs md:text-sm text-gray-500">
-            Copyright 2026 AGCC26. All Rights Reserved.
-          </div>
+                Designed & Developed by{" "}
+     <a
+           href="https://www.sayedrazzak.in"
+           target="_blank"
+          rel="noopener noreferrer"
+          className="font-bold text-yellow-400 hover:text-white hover:underline transition-all duration-300"
+     >
+        Sayed Razzak
+       </a>
+   </div> 
         </div>
       </footer>
     </div>
