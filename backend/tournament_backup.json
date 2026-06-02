@@ -1,0 +1,504 @@
+[
+{
+  "model": "tournament.team",
+  "pk": 1,
+  "fields": {
+    "name": "ARATI KNIGHT RIDERS",
+    "logo": "team_logos/AKR.png",
+    "captain": "DECLARE SOON",
+    "description": "ARATI KNIGHT RIDERS NOT JUST A TEAM ITS A EMOTIONS",
+    "owner_name": null,
+    "owner_photo": ""
+  }
+},
+{
+  "model": "tournament.team",
+  "pk": 2,
+  "fields": {
+    "name": "ARATI SUPER KINGS",
+    "logo": "team_logos/ASK.png",
+    "captain": "DECLARE SOON",
+    "description": "ARATI SUPER KINGS",
+    "owner_name": null,
+    "owner_photo": ""
+  }
+},
+{
+  "model": "tournament.team",
+  "pk": 3,
+  "fields": {
+    "name": "ARATI CHALLENGERS",
+    "logo": "team_logos/ACR.png",
+    "captain": "DECLARE SOON",
+    "description": "ARATI CHALLENGERS",
+    "owner_name": null,
+    "owner_photo": ""
+  }
+},
+{
+  "model": "tournament.team",
+  "pk": 4,
+  "fields": {
+    "name": "ARATI SUNRISERS",
+    "logo": "team_logos/ASR.png",
+    "captain": "DECLARE SOON",
+    "description": "ARATI SUNRISERS",
+    "owner_name": null,
+    "owner_photo": ""
+  }
+},
+{
+  "model": "tournament.team",
+  "pk": 5,
+  "fields": {
+    "name": "ARATI ROYALS",
+    "logo": "team_logos/ARATI_ROYALS.png",
+    "captain": "DECLARE SOON",
+    "description": "ARATI ROYALS",
+    "owner_name": null,
+    "owner_photo": ""
+  }
+},
+{
+  "model": "tournament.team",
+  "pk": 6,
+  "fields": {
+    "name": "ARATI WARRIORS",
+    "logo": "team_logos/ARATI_WARRIORS.png",
+    "captain": "DECLARE SOON",
+    "description": "ARATI ROYALS",
+    "owner_name": null,
+    "owner_photo": ""
+  }
+},
+{
+  "model": "tournament.player",
+  "pk": 3,
+  "fields": {
+    "team": 1,
+    "name": "SK ARMAN ALI",
+    "photo": "player_photos/1000185512-removebg-preview.png",
+    "role": "batter",
+    "batting_style": "LEFT HANDED BATTER",
+    "bowling_style": "RIGHT ARM MEDIUM"
+  }
+},
+{
+  "model": "tournament.player",
+  "pk": 4,
+  "fields": {
+    "team": 1,
+    "name": "SK BAHADUR ALI",
+    "photo": "player_photos/1000185513-removebg-preview.png",
+    "role": "all_rounder",
+    "batting_style": "Right handed batter",
+    "bowling_style": "RIGHT ARM MEDIUM"
+  }
+},
+{
+  "model": "tournament.match",
+  "pk": 2,
+  "fields": {
+    "team1": 1,
+    "team2": 4,
+    "match_number": 1,
+    "date": "2026-06-13T08:00:00",
+    "venue": "ARATI EID GHA MATH",
+    "status": "upcoming",
+    "team1_score": "",
+    "team2_score": "",
+    "result": ""
+  }
+},
+{
+  "model": "tournament.match",
+  "pk": 3,
+  "fields": {
+    "team1": 2,
+    "team2": 6,
+    "match_number": 2,
+    "date": "2026-06-13T08:50:00",
+    "venue": "ARATI EID GHA MATH",
+    "status": "upcoming",
+    "team1_score": "",
+    "team2_score": "",
+    "result": ""
+  }
+},
+{
+  "model": "tournament.match",
+  "pk": 4,
+  "fields": {
+    "team1": 3,
+    "team2": 5,
+    "match_number": 3,
+    "date": "2026-06-13T09:40:00",
+    "venue": "ARATI EID GHA MATH",
+    "status": "upcoming",
+    "team1_score": "",
+    "team2_score": "",
+    "result": ""
+  }
+},
+{
+  "model": "tournament.match",
+  "pk": 5,
+  "fields": {
+    "team1": 1,
+    "team2": 2,
+    "match_number": 4,
+    "date": "2026-06-13T10:45:00",
+    "venue": "ARATI EID GHA MATH",
+    "status": "upcoming",
+    "team1_score": "",
+    "team2_score": "",
+    "result": ""
+  }
+},
+{
+  "model": "tournament.match",
+  "pk": 6,
+  "fields": {
+    "team1": 4,
+    "team2": 6,
+    "match_number": 5,
+    "date": "2026-06-13T11:35:00",
+    "venue": "ARATI EID GHA MATH",
+    "status": "upcoming",
+    "team1_score": "",
+    "team2_score": "",
+    "result": ""
+  }
+},
+{
+  "model": "tournament.match",
+  "pk": 7,
+  "fields": {
+    "team1": 3,
+    "team2": 1,
+    "match_number": 6,
+    "date": "2026-06-13T12:25:00",
+    "venue": "ARATI EID GHA MATH",
+    "status": "upcoming",
+    "team1_score": "",
+    "team2_score": "",
+    "result": ""
+  }
+},
+{
+  "model": "tournament.match",
+  "pk": 8,
+  "fields": {
+    "team1": 5,
+    "team2": 2,
+    "match_number": 7,
+    "date": "2026-06-13T14:00:00",
+    "venue": "ARATI EID GHA MATH",
+    "status": "upcoming",
+    "team1_score": "",
+    "team2_score": "",
+    "result": ""
+  }
+},
+{
+  "model": "tournament.match",
+  "pk": 9,
+  "fields": {
+    "team1": 4,
+    "team2": 3,
+    "match_number": 8,
+    "date": "2026-06-13T14:50:00",
+    "venue": "ARATI EID GHA MATH",
+    "status": "upcoming",
+    "team1_score": "",
+    "team2_score": "",
+    "result": ""
+  }
+},
+{
+  "model": "tournament.match",
+  "pk": 10,
+  "fields": {
+    "team1": 6,
+    "team2": 5,
+    "match_number": 9,
+    "date": "2026-06-13T15:40:00",
+    "venue": "ARATI EID GHA MATH",
+    "status": "upcoming",
+    "team1_score": "",
+    "team2_score": "",
+    "result": ""
+  }
+},
+{
+  "model": "tournament.match",
+  "pk": 11,
+  "fields": {
+    "team1": 1,
+    "team2": 6,
+    "match_number": 10,
+    "date": "2026-06-14T08:00:00",
+    "venue": "ARATI EID GHA MATH",
+    "status": "upcoming",
+    "team1_score": "",
+    "team2_score": "",
+    "result": ""
+  }
+},
+{
+  "model": "tournament.match",
+  "pk": 12,
+  "fields": {
+    "team1": 2,
+    "team2": 3,
+    "match_number": 11,
+    "date": "2026-06-14T08:50:00",
+    "venue": "ARATI EID GHA MATH",
+    "status": "upcoming",
+    "team1_score": "",
+    "team2_score": "",
+    "result": ""
+  }
+},
+{
+  "model": "tournament.match",
+  "pk": 13,
+  "fields": {
+    "team1": 4,
+    "team2": 5,
+    "match_number": 12,
+    "date": "2026-06-14T09:40:00",
+    "venue": "ARATI EID GHA MATH",
+    "status": "upcoming",
+    "team1_score": "",
+    "team2_score": "",
+    "result": ""
+  }
+},
+{
+  "model": "tournament.pointstable",
+  "pk": 1,
+  "fields": {
+    "team": 1,
+    "matches": 0,
+    "wins": 0,
+    "losses": 0,
+    "points": 0,
+    "net_run_rate": 0.0
+  }
+},
+{
+  "model": "tournament.pointstable",
+  "pk": 2,
+  "fields": {
+    "team": 2,
+    "matches": 0,
+    "wins": 0,
+    "losses": 0,
+    "points": 0,
+    "net_run_rate": 0.0
+  }
+},
+{
+  "model": "tournament.pointstable",
+  "pk": 3,
+  "fields": {
+    "team": 3,
+    "matches": 0,
+    "wins": 0,
+    "losses": 0,
+    "points": 0,
+    "net_run_rate": 0.0
+  }
+},
+{
+  "model": "tournament.pointstable",
+  "pk": 4,
+  "fields": {
+    "team": 4,
+    "matches": 0,
+    "wins": 0,
+    "losses": 0,
+    "points": 0,
+    "net_run_rate": 0.0
+  }
+},
+{
+  "model": "tournament.pointstable",
+  "pk": 5,
+  "fields": {
+    "team": 5,
+    "matches": 0,
+    "wins": 0,
+    "losses": 0,
+    "points": 0,
+    "net_run_rate": 0.0
+  }
+},
+{
+  "model": "tournament.pointstable",
+  "pk": 6,
+  "fields": {
+    "team": 6,
+    "matches": 0,
+    "wins": 0,
+    "losses": 0,
+    "points": 0,
+    "net_run_rate": 0.0
+  }
+},
+{
+  "model": "tournament.rule",
+  "pk": 4,
+  "fields": {
+    "title": "TOURNAMENT FORMAT",
+    "description": "1.1 The tournament will be played in a 5-over format.\r\n\r\n1.2 A total of 6 teams will participate.\r\n\r\n1.3 Each team will play 4 league matches.\r\n\r\n1.4 The Top 4 teams will qualify for the Playoffs.\r\n\r\n1.5 The tournament will follow the IPL Style Playoff System.\r\n\r\n1.6 The tournament will be played under the Short Ball Long Mar format.\r\n\r\n1.7 Official Tennis Ball will be used in all matches."
+  }
+},
+{
+  "model": "tournament.rule",
+  "pk": 5,
+  "fields": {
+    "title": "TEAM & PLAYER RULES",
+    "description": "2.1 Each team may have a maximum of 15 players.\r\n\r\n2.2 Playing XI will consist of 11 players.\r\n\r\n2.3 Each team may keep 4 substitute players.\r\n\r\n2.4 A maximum of 2 players from outside the village may be included in a squad.\r\n\r\n2.5 Players of all age groups are eligible to participate.\r\n\r\n2.6 A player cannot play for more than one team.\r\n\r\n2.7 Submission of Aadhaar Card Xerox along with the Registration Form is mandatory.\r\n\r\n2.8 Any player found using fake documents may be suspended, banned, and disqualified from receiving any prize.\r\n\r\n2.9 Impact Player Rule will not be applicable."
+  }
+},
+{
+  "model": "tournament.rule",
+  "pk": 6,
+  "fields": {
+    "title": "AUCTION RULES",
+    "description": "3.1 The tournament will be conducted through an IPL Style Auction System.\r\n\r\n3.2 No auction amount will be paid directly to any player.\r\n\r\n3.3 Every player must complete registration before participating in the Auction.\r\n\r\n3.4 Registration fees are non-refundable.\r\n\r\n3.5 If an auctioned player refuses to play and the Team Owner submits a complaint, the player may be banned for up to 2 years.\r\n\r\n3.6 Any player unwilling to participate must inform the Management Committee at least 1 day before the Auction.\r\n\r\n3.7 If a player withdraws after being auctioned, the Management Committee's decision shall be final.\r\n\r\n3.8 A player cannot participate in the Auction for more than one team.\r\n\r\n3.9 Any false information provided during registration or auction may result in immediate disqualification.\r\n\r\n3.10 The AGCC Management Team reserves the right to approve, reject, or cancel any player's participation in the Auction if necessary."
+  }
+},
+{
+  "model": "tournament.rule",
+  "pk": 7,
+  "fields": {
+    "title": "MATCH RULES",
+    "description": "4.1 Each match will consist of 5 overs per side.\r\n\r\n4.2 Toss will take place 1 minute before the match starts.\r\n\r\n4.3 The bowling format will be 1,1,1,1,1 overs per bowler.\r\n\r\n4.4 Wide Ball = 1 Extra Run.\r\n\r\n4.5 No Ball = 1 Extra Run.\r\n\r\n4.6 Every No Ball will result in a Free Hit.\r\n\r\n4.7 Boundary dimensions will be determined by the Tournament Management.\r\n\r\n4.8 All teams must report to the ground at least 30 minutes before the scheduled match.\r\n\r\n4.9 Unnecessary delay during a match may result in warnings or penalties."
+  }
+},
+{
+  "model": "tournament.rule",
+  "pk": 8,
+  "fields": {
+    "title": "BOWLING RULES",
+    "description": "5.1 Bowlers must bowl from a stand-by position.\r\n\r\n5.2 Running in with an illegal bowling action is prohibited.\r\n\r\n5.3 Angle Bowling is strictly prohibited.\r\n\r\n5.4 Chucking is strictly prohibited.\r\n\r\n5.5 Waist-high full toss will be declared a No Ball.\r\n\r\n5.6 Head-high dangerous deliveries may be declared a No Ball at the umpire's discretion.\r\n\r\n5.7 Dangerous bowling may result in warnings or suspension."
+  }
+},
+{
+  "model": "tournament.rule",
+  "pk": 9,
+  "fields": {
+    "title": "BATTING RULES",
+    "description": "6.1 Hit Wicket will be considered out.\r\n\r\n6.2 Throwing the bat may result in a warning or dismissal.\r\n\r\n6.3 Intentional time wasting may attract penalties.\r\n\r\n6.4 In case of collision while running between wickets, the umpire's decision shall be final."
+  }
+},
+{
+  "model": "tournament.rule",
+  "pk": 10,
+  "fields": {
+    "title": "FIELDING RULES",
+    "description": "7.1 Boundary catches must be completed cleanly.\r\n\r\n7.2 Crowd interference decisions shall be made by the Umpire.\r\n\r\n7.3 Deliberate distraction of batters may result in penalties.\r\n\r\n7.4 Abusive behavior may result in disciplinary action."
+  }
+},
+{
+  "model": "tournament.rule",
+  "pk": 11,
+  "fields": {
+    "title": "8. POINTS TABLE RULES",
+    "description": "8.1 Win = 2 Points.\r\n\r\n8.2 Loss = 0 Points.\r\n\r\n8.3 Tie = 1 Point."
+  }
+},
+{
+  "model": "tournament.rule",
+  "pk": 12,
+  "fields": {
+    "title": "SUPER OVER RULES",
+    "description": "9.1 A tied match will be decided by a Super Over.\r\n\r\n9.2 If the first Super Over is tied, a second Super Over will be played.\r\n\r\n9.3 If the second Super Over is also tied, the team with more sixes will be declared the winner.\r\n\r\n9.4 If any dispute remains, the Management Committee's decision shall be final."
+  }
+},
+{
+  "model": "tournament.rule",
+  "pk": 13,
+  "fields": {
+    "title": "PLAYOFF RULES",
+    "description": "10.1 Qualifier 1: Team #1 vs Team #2.\r\n\r\n10.2 Winner of Qualifier 1 will qualify directly for the Final.\r\n\r\n10.3 Loser of Qualifier 1 will play Qualifier 2.\r\n\r\n10.4 Eliminator: Team #3 vs Team #4.\r\n\r\n10.5 Winner of Eliminator will play Qualifier 2.\r\n\r\n10.6 Loser of Eliminator will be eliminated.\r\n\r\n10.7 Winner of Qualifier 2 will qualify for the Final."
+  }
+},
+{
+  "model": "tournament.rule",
+  "pk": 14,
+  "fields": {
+    "title": "RAIN & INTERRUPTION RULES",
+    "description": "11.1 In case of rain or unavoidable interruption, the decision of the Organizing Committee shall be final.\r\n\r\n11.2 Matches may be rescheduled if necessary.\r\n\r\n11.3 The Tournament Management reserves full authority regarding interrupted matches."
+  }
+},
+{
+  "model": "tournament.rule",
+  "pk": 15,
+  "fields": {
+    "title": "JERSEY & EQUIPMENT RULES",
+    "description": "12.1 Jerseys provided by AGCC must be returned after the tournament.\r\n\r\n12.2 Failure to return jerseys may result in a ban from future seasons.\r\n\r\n12.3 Compensation may be required for damaged jerseys.\r\n\r\n12.4 Players must properly use and maintain jerseys, shoes, and other equipment."
+  }
+},
+{
+  "model": "tournament.rule",
+  "pk": 16,
+  "fields": {
+    "title": "DISCIPLINE RULES",
+    "description": "13.1 Fighting, threats, misconduct, or creating disorder may result in immediate suspension or disqualification.\r\n\r\n13.2 Misbehavior toward umpires, officials, players, or spectators will lead to disciplinary action.\r\n\r\n13.3 Spectators are not allowed to enter the playing area without permission.\r\n\r\n13.4 The Umpire's decision shall be final and binding."
+  }
+},
+{
+  "model": "tournament.rule",
+  "pk": 17,
+  "fields": {
+    "title": "MEDIA & CONTENT RULES",
+    "description": "15.1 Tournament photos and videos may be used on AGCC social media platforms.\r\n\r\n15.2 Official reels, vlogs, highlights, and promotional content may be created by AGCC.\r\n\r\n15.3 No team or individual may obstruct official media activities."
+  }
+},
+{
+  "model": "tournament.rule",
+  "pk": 18,
+  "fields": {
+    "title": "PRIZE RULES",
+    "description": "16.1 A Man of the Match award will be presented after every match.\r\n\r\n16.2 Final awards will be decided by the AGCC Management Team.\r\n\r\n16.3 Any player found using fake documents shall forfeit all prizes and awards."
+  }
+},
+{
+  "model": "tournament.rule",
+  "pk": 19,
+  "fields": {
+    "title": "TEAM OWNER RULES",
+    "description": "17.1 All Team Owners must comply with AGCC Rules and Regulations.\r\n\r\n17.2 No Team Owner may recruit any player outside the official Auction Process.\r\n\r\n17.3 Any involvement in match-fixing, unfair influence, or activities against the interests of the tournament may result in team disqualification.\r\n\r\n17.4 The decisions of the AGCC Management Team and Umpires are final and binding on all Team Owners.\r\n\r\n17.5 All Team Owners are expected to maintain discipline and the reputation of the tournament.\r\n\r\n17.6 Team Ownership is valid only for the AGCC 2026 Season."
+  }
+},
+{
+  "model": "tournament.rule",
+  "pk": 20,
+  "fields": {
+    "title": "SAFETY & MANAGEMENT RULES",
+    "description": "18.1 The Organizing Committee shall not be responsible for any injury, accident, loss, or damage suffered during the tournament.\r\n\r\n18.2 The AGCC Management Team reserves the right to amend, add, remove, or modify any rule whenever necessary.\r\n\r\n18.3 Any issue not specifically covered in these rules shall be decided by the AGCC Management Team.\r\n\r\n18.4 The decision of the AGCC Management Team shall be final and binding on all participants."
+  }
+},
+{
+  "model": "tournament.organizer",
+  "pk": 1,
+  "fields": {
+    "name": "SK YASIR ARAFAT",
+    "designation": "EXCUTIVE MEMBER",
+    "photo": "organizer_photos/20260530_122830.webp"
+  }
+},
+{
+  "model": "tournament.organizer",
+  "pk": 2,
+  "fields": {
+    "name": "SEKH SAHINUR ISLAM",
+    "designation": "PRESIDENT",
+    "photo": "media/organizer_photos/20260530_123104_utwchm"
+  }
+}
+]

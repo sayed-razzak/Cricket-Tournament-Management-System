@@ -73,12 +73,19 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 import dj_database_url
 
+
+import dj_database_url
+import os
+# POSTGRES 
 DATABASES = {
     "default": dj_database_url.config(
-        default=os.getenv("DATABASE_URL"),
+        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
         conn_max_age=600
     )
 }
+
+
+
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
