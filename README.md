@@ -4,7 +4,7 @@ AGCC26 (Arati Gram Cricket Carnival 2026) is a full-stack web application built 
 
 🌐 Live Demo
 
-Frontend: https://cricket-tournament-management-syste-seven.vercel.app/
+Frontend: www.agcc26.in
 
 ✨ Features
 
