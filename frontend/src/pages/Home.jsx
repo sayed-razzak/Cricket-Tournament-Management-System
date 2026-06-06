@@ -134,46 +134,7 @@ function Home() {
             </Link>
           ))}
         </div>
-      </section>
-
-      <section className="max-w-7xl mx-auto px-4 pb-12">
-        <div className="flex items-end justify-between gap-4 mb-5">
-          <h2 className="text-2xl md:text-4xl font-black">Featured Teams</h2>
-          <Link to="/teams" className="text-red-700 font-bold text-sm md:text-base">
-            View All
-          </Link>
-        </div>
-
-        {teams.length === 0 ? (
-          <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center text-gray-500">
-            No teams found.
-          </div>
-        ) : (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {teams.map((team) => (
-              <Link
-                key={team.id}
-                to={`/teams/${team.id}`}
-                className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl active:scale-[0.99] transition"
-              >
-                <div className="p-4 sm:p-5 flex items-center justify-center bg-gray-50">
-                  <img
-                    src={getImageUrl(team.logo)}
-                    alt={team.name}
-                    className="w-20 h-20 sm:w-24 sm:h-24 object-contain"
-                  />
-                </div>
-                <div className="p-4 text-center">
-                  <h3 className="font-black text-sm sm:text-lg leading-tight">{team.name}</h3>
-                  <p className="text-xs sm:text-sm text-gray-500 mt-1">
-                    {team.captain || "Captain soon"}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        )}
-      </section>
+      </section> 
 
       <section className="max-w-7xl mx-auto px-4 pb-12">
         <div className="bg-gradient-to-r from-black via-gray-950 to-red-900 rounded-2xl shadow-xl p-6 sm:p-8 text-center">
