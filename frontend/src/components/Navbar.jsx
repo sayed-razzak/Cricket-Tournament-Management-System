@@ -4,18 +4,20 @@ import {
   FaBars,
   FaCalendarAlt,
   FaHome,
-  FaImages,
   FaListOl,
   FaTimes,
   FaTrophy,
+  FaUsers,
 } from "react-icons/fa";
 
 const navLinks = [
   { to: "/", label: "Home" },
   { to: "/teams", label: "Teams" },
+  { to: "/players", label: "Players" },
   { to: "/fixtures", label: "Fixtures" },
   { to: "/points-table", label: "Table" },
   { to: "/organizers", label: "Organizers" },
+  { to: "/franchise-owners", label: "Owners" },
   { to: "/sponsors", label: "Sponsors" },
   { to: "/gallery", label: "Gallery" },
   { to: "/rules", label: "Rules" },
@@ -24,9 +26,9 @@ const navLinks = [
 const mobileTabs = [
   { to: "/", label: "Home", icon: FaHome },
   { to: "/teams", label: "Teams", icon: FaTrophy },
+  { to: "/players", label: "Players", icon: FaUsers },
   { to: "/fixtures", label: "Matches", icon: FaCalendarAlt },
   { to: "/points-table", label: "Table", icon: FaListOl },
-  { to: "/gallery", label: "Gallery", icon: FaImages },
 ];
 
 function Navbar() {

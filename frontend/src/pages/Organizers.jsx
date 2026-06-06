@@ -3,6 +3,7 @@ import API from "../services/api";
 import { getImageUrl } from "../utils/images";
 import PageHeader from "../components/PageHeader";
 import EmptyState from "../components/EmptyState";
+import { FaInstagram } from "react-icons/fa";
 
 function getOrganizerPriority(designation = "") {
   return designation.toLowerCase().includes("president") ? 0 : 1;
@@ -37,6 +38,17 @@ function Organizers() {
                   />
                   <h2 className="text-base sm:text-2xl font-black mt-4 leading-tight">{person.name}</h2>
                   <p className="text-red-700 font-bold mt-1 text-xs sm:text-sm uppercase tracking-wide">{person.designation}</p>
+                  {person.instagram_url && (
+                    <a
+                      href={person.instagram_url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-4 mx-auto w-10 h-10 rounded-full bg-pink-600 text-white flex items-center justify-center text-lg hover:scale-105 transition"
+                      aria-label={`${person.name} Instagram`}
+                    >
+                      <FaInstagram />
+                    </a>
+                  )}
                 </div>
               ))}
           </div>

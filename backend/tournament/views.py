@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from .models import Team, Player, Match, PointsTable, Rule, Organizer, Sponsor, Gallery
+from .models import Team, Player, Match, PointsTable, Rule, Organizer, Sponsor, Gallery, Announcement
 from .serializers import (
     TeamSerializer,
     PlayerSerializer,
@@ -8,7 +8,8 @@ from .serializers import (
     RuleSerializer,
     OrganizerSerializer,
     SponsorSerializer,
-    GallerySerializer
+    GallerySerializer,
+    AnnouncementSerializer
 )
 
 
@@ -18,7 +19,7 @@ class TeamViewSet(viewsets.ModelViewSet):
 
 
 class PlayerViewSet(viewsets.ModelViewSet):
-    queryset = Player.objects.all()
+    queryset = Player.objects.select_related('team').all().order_by('name')
     serializer_class = PlayerSerializer
 
 
@@ -38,7 +39,7 @@ class RuleViewSet(viewsets.ModelViewSet):
 
 
 class OrganizerViewSet(viewsets.ModelViewSet):
-    queryset = Organizer.objects.all()
+    queryset = Organizer.objects.all().order_by('id')
     serializer_class = OrganizerSerializer
 
 
@@ -50,3 +51,8 @@ class SponsorViewSet(viewsets.ModelViewSet):
 class GalleryViewSet(viewsets.ModelViewSet):
     queryset = Gallery.objects.all().order_by('-created_at')
     serializer_class = GallerySerializer
+
+
+class AnnouncementViewSet(viewsets.ModelViewSet):
+    queryset = Announcement.objects.filter(is_active=True).order_by('-created_at')
+    serializer_class = AnnouncementSerializer

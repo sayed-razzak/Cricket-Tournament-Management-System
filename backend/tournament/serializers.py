@@ -1,9 +1,12 @@
 from rest_framework import serializers
 from django.utils import timezone
-from .models import Team, Player, Match, PointsTable, Rule, Organizer, Sponsor, Gallery
+from .models import Team, Player, Match, PointsTable, Rule, Organizer, Sponsor, Gallery, Announcement
 
 
 class PlayerSerializer(serializers.ModelSerializer):
+    team_name = serializers.CharField(source='team.name', read_only=True)
+    team_logo = serializers.ImageField(source='team.logo', read_only=True)
+
     class Meta:
         model = Player
         fields = '__all__'
@@ -71,4 +74,10 @@ class SponsorSerializer(serializers.ModelSerializer):
 class GallerySerializer(serializers.ModelSerializer):
     class Meta:
         model = Gallery
+        fields = '__all__'
+
+
+class AnnouncementSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Announcement
         fields = '__all__'

@@ -78,9 +78,20 @@ class Organizer(models.Model):
     name = models.CharField(max_length=100)
     designation = models.CharField(max_length=100)
     photo = models.ImageField(upload_to='organizer_photos/')
+    instagram_url = models.URLField(blank=True)
 
     def __str__(self):
         return self.name
+
+
+class Announcement(models.Model):
+    title = models.CharField(max_length=150)
+    message = models.TextField()
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
 
 
 class Sponsor(models.Model):

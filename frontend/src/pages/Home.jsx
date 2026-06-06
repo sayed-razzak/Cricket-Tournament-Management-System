@@ -7,6 +7,7 @@ import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 function Home() {
   const [teams, setTeams] = useState([]);
   const [sponsors, setSponsors] = useState([]);
+  const [announcements, setAnnouncements] = useState([]);
 
   useEffect(() => {
     API.get("teams/")
@@ -15,6 +16,10 @@ function Home() {
 
     API.get("sponsors/")
       .then((res) => setSponsors(res.data.slice(0, 4)))
+      .catch((err) => console.log(err));
+
+    API.get("announcements/")
+      .then((res) => setAnnouncements(res.data.slice(0, 3)))
       .catch((err) => console.log(err));
   }, []);
 
@@ -78,12 +83,42 @@ function Home() {
         </div>
       </section>
 
+      <section className="max-w-7xl mx-auto px-4 pt-10">
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          <div className="bg-red-700 text-white px-4 py-3 flex items-center justify-between gap-3">
+            <h2 className="font-black text-lg sm:text-2xl">Announcements</h2>
+            <span className="text-[11px] sm:text-xs bg-white/20 rounded-full px-3 py-1 font-bold">
+              AGCC26
+            </span>
+          </div>
+
+          <div className="p-4 sm:p-5 space-y-3">
+            {announcements.length === 0 ? (
+              <p className="text-sm text-gray-600">
+                No announcements yet. Updates from the organizers will appear here.
+              </p>
+            ) : (
+              announcements.map((announcement) => (
+                <div key={announcement.id} className="border-b last:border-b-0 border-gray-100 pb-3 last:pb-0">
+                  <h3 className="font-black text-gray-900">{announcement.title}</h3>
+                  <p className="text-sm text-gray-600 mt-1 whitespace-pre-line">
+                    {announcement.message}
+                  </p>
+                </div>
+              ))
+            )}
+          </div>
+        </div>
+      </section>
+
       <section className="max-w-7xl mx-auto px-4 py-10 md:py-14">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-6 gap-4">
           {[
             { to: "/teams", icon: "Teams", title: "Teams", text: "Logos, owners and squads." },
+            { to: "/players", icon: "Players", title: "Players", text: "A-Z registered player list." },
             { to: "/fixtures", icon: "Matches", title: "Fixtures", text: "Upcoming and completed matches." },
             { to: "/points-table", icon: "Table", title: "Points Table", text: "Rankings and net run rate." },
+            { to: "/franchise-owners", icon: "Owners", title: "Owners", text: "Franchise owner profiles." },
             { to: "/rules", icon: "Rules", title: "Rules", text: "Tournament regulations." },
           ].map((item) => (
             <Link
@@ -94,8 +129,8 @@ function Home() {
               <div className="min-h-10 inline-flex items-center rounded-full bg-red-50 text-red-700 px-3 text-xs font-black mb-4">
                 {item.icon}
               </div>
-              <h3 className="text-lg sm:text-2xl font-black">{item.title}</h3>
-              <p className="mt-2 text-sm text-gray-600">{item.text}</p>
+              <h3 className="text-base sm:text-lg xl:text-xl font-black leading-tight">{item.title}</h3>
+              <p className="mt-2 text-xs sm:text-sm text-gray-600">{item.text}</p>
             </Link>
           ))}
         </div>

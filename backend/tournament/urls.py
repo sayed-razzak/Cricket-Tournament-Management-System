@@ -9,6 +9,7 @@ from .views import (
     OrganizerViewSet,
     SponsorViewSet,
     GalleryViewSet,
+    AnnouncementViewSet,
 )
 
 router = DefaultRouter()
@@ -20,6 +21,7 @@ router.register(r'rules', RuleViewSet)
 router.register(r'organizers', OrganizerViewSet)
 router.register(r'sponsors', SponsorViewSet)
 router.register(r'gallery', GalleryViewSet)
+router.register(r'announcements', AnnouncementViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

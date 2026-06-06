@@ -4,10 +4,12 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Teams from "./pages/Teams";
 import TeamDetails from "./pages/TeamDetails";
+import Players from "./pages/Players";
 import Fixtures from "./pages/Fixtures";
 import PointsTable from "./pages/PointsTable";
 import Rules from "./pages/Rules";
 import Organizers from "./pages/Organizers";
+import FranchiseOwners from "./pages/FranchiseOwners";
 import Sponsors from "./pages/Sponsors";
 import Gallery from "./pages/Gallery";
 
@@ -20,10 +22,12 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/teams" element={<Teams />} />
           <Route path="/teams/:id" element={<TeamDetails />} />
+          <Route path="/players" element={<Players />} />
           <Route path="/fixtures" element={<Fixtures />} />
           <Route path="/points-table" element={<PointsTable />} />
           <Route path="/rules" element={<Rules />} />
           <Route path="/organizers" element={<Organizers />} />
+          <Route path="/franchise-owners" element={<FranchiseOwners />} />
           <Route path="/sponsors" element={<Sponsors />} />
           <Route path="/gallery" element={<Gallery />} />
         </Routes>
